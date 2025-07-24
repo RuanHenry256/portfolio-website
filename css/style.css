@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(120deg, #536878 50%, #3c515e 50%);
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #7C878C;
+  padding: 0.1rem 2rem;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+}
+
+.linkedin-icon {
+  background-color: white;
+  color: black;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hero {
+  position: relative;
+  height: calc(100vh - 60px); /* Full height minus navbar */
+  padding: 4rem 2rem 6rem 6vw; /* Padding on all sides */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.hero-content {
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+  font-size: 7rem;
+  font-weight: 700;
+}
+
+.period {
+  color: white;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.cta-button {
+  position: absolute;
+  bottom: 4rem; /* Raise it slightly */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7C878C;
+  color: white;
+  padding: 1.2rem 2.4rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: #aab9c3;
+}
+
+.headshot-placeholder {
+  position: absolute;
+  top: 6rem;
+  right: 6vw;
+  width: 310px;
+  height: 310px;
+  background-color: white;
+  border-radius: 50%;
+  border: 4px solid #7c878c;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.page-content {
+  padding: 6rem 6vw;
+  min-height: calc(100vh - 60px);
+}
+
