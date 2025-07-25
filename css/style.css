@@ -100,7 +100,7 @@ a {
   background-color: #aab9c3;
   color: white;
   animation: bounceAndGrow 0.7s ease-out; /* Apply the bounce and grow animation */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for a "pop" effect */
+  box-shadow: black; /* Adds a subtle shadow for a "pop" effect */
 }
 .hero {
   position: relative;
@@ -165,7 +165,7 @@ a {
   background-color: white;
   border-radius: 50%;
   border: 4px solid #7c878c;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: black;
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -210,6 +210,31 @@ a {
   font-weight: bold; /* Keep bold for content links */
 }
 
+.lightbox {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  z-index: 1000;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: black;
+  cursor: default;
+}
+
 /* Projects Page Specific Styles */
 .projects-grid {
   display: flex;
@@ -222,10 +247,10 @@ a {
 .project-item {
   display: flex;
   flex-direction: column;
-  background-color: #3c515e;
+  background-color: #7C878C;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: black;
 }
 
 .project-carousel {
@@ -241,35 +266,43 @@ a {
 }
 
 .project-carousel img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  border-radius: 0.3rem;
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 1;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.project-carousel {
+  position: relative;
+  overflow: hidden;
 }
 
 .carousel-nav {
   position: absolute;
   top: 50%;
-  width: 100%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
   transform: translateY(-50%);
-  padding: 0 10px;
+  pointer-events: none; /* Prevent container from blocking clicks */
+  z-index: 10; /* Ensure arrows are above images */
 }
 
 .carousel-nav .arrow {
-  font-size: 2rem;
-  color: #333;
+  pointer-events: auto; /* Enable clicks on arrows */
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 10px 15px;
   cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   user-select: none;
-  transition: background-color 0.2s;
+  border-radius: 4px;
+  font-size: 24px;
+  /* Optional: add some margin so arrows don’t sit exactly at edges */
+  margin: 0 10px;
 }
 
 .carousel-nav .arrow:hover {
@@ -310,7 +343,7 @@ a {
   border-radius: 50%;
   overflow: hidden;
   border: 4px solid #7c878c;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: black;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -357,10 +390,10 @@ a {
 }
 
 .cv-section {
-  background-color: #3c515e;
+  background-color: #7C878C;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: black;
   margin-bottom: 2rem; /* Space between sections */
   width: 100%; /* Ensure sections take full width of their column */
 }
@@ -372,7 +405,7 @@ a {
 .cv-section h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #aab9c3;
+  color: white;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.5rem;
 }
@@ -406,10 +439,10 @@ a {
 
 .contact-info-block,
 .contact-socials-block {
-  background-color: #3c515e; /* Same as cv-section */
+  background-color: #7C878C; /* Same as cv-section */
   padding: 1.5rem; /* Same as cv-section */
   border-radius: 0.5rem; /* Same as cv-section */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Same as cv-section */
+  box-shadow: black; /* Same as cv-section */
   width: 100%; /* Full width on mobile */
 }
 
@@ -417,7 +450,7 @@ a {
 .contact-socials-block h3 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #aab9c3;
+  color: white;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.5rem;
 }
